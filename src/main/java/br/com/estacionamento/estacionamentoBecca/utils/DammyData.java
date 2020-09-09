@@ -3,18 +3,20 @@ package br.com.estacionamento.estacionamentoBecca.utils;
 import br.com.estacionamento.estacionamentoBecca.model.Veiculo;
 import br.com.estacionamento.estacionamentoBecca.repository.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class DammyData {
 
     @Autowired
     VeiculoRepository veiculoRepository;
 
-   // @PostConstruct
+    @PostConstruct
     public void saveVeiculos() {
         List<Veiculo> veiculosList = new ArrayList<>();
         Veiculo v1 = new Veiculo();

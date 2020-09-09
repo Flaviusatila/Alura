@@ -5,12 +5,12 @@ import com.sun.istack.NotNull;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "movimentacao", schema="estacionamento")
+//@Table(name = "movimentacao", schema="estacionamento")
 public class Movimentacao {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-
+    private Long id;
     @NotNull
     private Integer id_veiculo;
 

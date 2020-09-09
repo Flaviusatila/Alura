@@ -6,11 +6,12 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "veiculo", schema="estacionamento")
+//@Table(name = "veiculo")
 public class Veiculo {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long   id;
     private String placa;
     private String marca;
     private String modelo;
