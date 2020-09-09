@@ -1,11 +1,12 @@
 package Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
-@Entity(name = "veiculo")
+import javax.persistence.*;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "veiculo", schema="estacionamento")
 public class VeiculoEntity {
 
     @Id
@@ -14,8 +15,13 @@ public class VeiculoEntity {
     private String marca;
     private String modelo;
     private double fatorEstacionamento;
-    private String horaEntrada;
-    private String horaSaida;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "HH:mm dd-MM-yyyy")
+    private LocalDateTime horaEntrada;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "HH:mm dd-MM-yyyy")
+    private LocalDateTime horaSaida;
+
     private double totalEstacionamento;
 
     public VeiculoEntity() {
@@ -27,6 +33,7 @@ public class VeiculoEntity {
         this.modelo = modelo;
         this.marca = marca;
     }
+
 
     public String getPlaca() {
         return placa;
@@ -60,19 +67,19 @@ public class VeiculoEntity {
         this.fatorEstacionamento = fatorEstacionamento;
     }
 
-    public String getHoraEntrada() {
+    public LocalDateTime getHoraEntrada() {
         return horaEntrada;
     }
 
-    public void setHoraEntrada(String horaEntrada) {
+    public void setHoraEntrada(LocalDateTime horaEntrada) {
         this.horaEntrada = horaEntrada;
     }
 
-    public String getHoraSaida() {
+    public LocalDateTime getHoraSaida() {
         return horaSaida;
     }
 
-    public void setHoraSaida(String horaSaida) {
+    public void setHoraSaida(LocalDateTime horaSaida) {
         this.horaSaida = horaSaida;
     }
 

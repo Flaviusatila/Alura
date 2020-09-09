@@ -1,7 +1,7 @@
 package Repository;
 
 import Entity.VeiculoEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface VeiculoRepository extends CrudRepository<VeiculoEntity, Long> {
+public interface VeiculoRepository extends JpaRepository<VeiculoEntity, Long> {
 }
