@@ -14,7 +14,7 @@ public class DammyData {
     @Autowired
     VeiculoRepository veiculoRepository;
 
-    @PostConstruct
+   // @PostConstruct
     public void saveVeiculos() {
         List<Veiculo> veiculosList = new ArrayList<>();
         Veiculo v1 = new Veiculo();
