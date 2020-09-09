@@ -1,21 +1,20 @@
-package Entity;
+package br.com.estacionamento.estacionamentoBecca.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity(name = "estacionamento")
-public class EstacionamentoEntity {
-
+@Entity
+@Table(name = "estacionamento", schema="estacionamento")
+public class Estacionamento {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private double valorHora ;
     private double totalFaturamento;
     private double totalFaturamentoCarro;
     private double totalFaturamentoUtilitario;
+    private double totalFaturamentoMoto;
 
-    public EstacionamentoEntity() {
+
+    public Estacionamento() {
     }
 
     public void setValorHora(double valorHora) {
@@ -37,4 +36,14 @@ public class EstacionamentoEntity {
     public double getTotalFaturamentoUtilitario() {
         return totalFaturamentoUtilitario;
     }
+
+    public double getTotalFaturamentoMoto() {
+        return totalFaturamentoMoto;
+    }
+
+    public void setTotalFaturamentoMoto(double totalFaturamentoMoto) {
+        this.totalFaturamentoMoto = totalFaturamentoMoto;
+    }
+
+
 }

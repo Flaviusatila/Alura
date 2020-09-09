@@ -1,4 +1,4 @@
-package Entity;
+package br.com.estacionamento.estacionamentoBecca.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "veiculo", schema="estacionamento")
-public class VeiculoEntity {
+public class Veiculo {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -23,17 +23,6 @@ public class VeiculoEntity {
     private LocalDateTime horaSaida;
 
     private double totalEstacionamento;
-
-    public VeiculoEntity() {
-    }
-
-    public VeiculoEntity(String placa, String modelo, String marca) {
-        super();
-        this.placa = placa;
-        this.modelo = modelo;
-        this.marca = marca;
-    }
-
 
     public String getPlaca() {
         return placa;
