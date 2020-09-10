@@ -57,5 +57,7 @@ public class Estacionamento {
         this.totalFaturamentoMoto = totalFaturamentoMoto;
     }
 
-
+    public Long getId() {
+        return id;
+    }
 }

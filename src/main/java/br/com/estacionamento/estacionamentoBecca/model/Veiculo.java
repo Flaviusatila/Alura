@@ -80,4 +80,12 @@ public class Veiculo {
     public double getTotalEstacionamento() {
         return totalEstacionamento;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public Long getOid_tipo_veiculo() {
+        return oid_tipo_veiculo;
+    }
 }
