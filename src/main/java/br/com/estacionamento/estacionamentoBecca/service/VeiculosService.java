@@ -9,5 +9,7 @@ public interface VeiculosService {
     List<Veiculo> findAll();
     Veiculo findById(long id);
     Veiculo save(Veiculo veiculo);
+    Veiculo findByPlaca(String placa);
+
 
 }

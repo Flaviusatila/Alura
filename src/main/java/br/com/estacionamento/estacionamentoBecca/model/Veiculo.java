@@ -1,6 +1,7 @@
 package br.com.estacionamento.estacionamentoBecca.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -11,11 +12,14 @@ public class Veiculo {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @NotNull
     private Long   id;
     private String placa;
     private String marca;
     private String modelo;
     private double fatorEstacionamento;
+    @NotNull
+    private Long oid_tipo_veiculo;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "HH:mm dd-MM-yyyy")
     private LocalDateTime horaEntrada;

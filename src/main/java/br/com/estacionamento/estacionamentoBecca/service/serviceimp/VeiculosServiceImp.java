@@ -28,4 +28,9 @@ public class VeiculosServiceImp implements VeiculosService {
     public Veiculo save(Veiculo veiculo) {
         return veiculoRepository.save(veiculo);
     }
+
+    @Override
+    public Veiculo findByPlaca(String placa) {
+        return null;
+    }
 }
