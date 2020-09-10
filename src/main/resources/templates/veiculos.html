@@ -17,12 +17,14 @@
                 <th>Placa</th>
                 <th>Modelo</th>
                 <th>Marca</th>
+                <th>Hora Entrada</th>
             </tr>
             </thead>
-            <tr th:each="veiculo : ${veiculo}">
+            <tr th:each="veiculo : ${veiculos}">
                 <td><span th:text="${veiculo.placa}"></span></td>
                 <td><span th:text="${veiculo.modelo}"></span></td>
                 <td><span th:text="${veiculo.marca}"></span></td>
+                <td><span th:text="${veiculo.horaEntrada}"></span></td>
             </tr>
 
         </table>
