@@ -6,7 +6,18 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/veiculos">Estacionamento</a>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Placa do Carro" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</header>
 <div class="container">
 
     <div id="veiculos">
@@ -21,19 +32,21 @@
             </tr>
             </thead>
             <tr th:each="veiculo : ${veiculos}">
-                <td><span th:text="${veiculo.placa}"></span></td>
-                <td><span th:text="${veiculo.modelo}"></span></td>
-                <td><span th:text="${veiculo.marca}"></span></td>
-                <td><span th:text="${veiculo.horaEntrada}"></span></td>
+<!--                <a th:href="${(#mvc.url('VC#getVeiculosSaida').arg(0, veiculo.id)).build()}"></a>-->
+<!--                    <td><span th:text="${veiculo.id}"></span></td>-->
+                    <td><span th:text="${veiculo.placa}"></span></td>
+                    <td><span th:text="${veiculo.modelo}"></span></td>
+                    <td><span th:text="${veiculo.marca}"></span></td>
+                    <td><span th:text="${veiculo.horaEntrada}"></span></td>
             </tr>
 
         </table>
     </div>
-
+<!--    <a th:href="@{/veiculos/3">Qualquer Coisa</a>-->
     <hr/>
 
     <h1>Adicionar Veiculo</h1>
-    <form action="salvar" method="post">
+    <form method="post">
         <div class="form-group">
             <label for="placa">Placa</label> <input type="text"
                                                            class="form-control" id="placa" name="placa" placeholder="Placa" />
@@ -46,6 +59,20 @@
             <label for="marca">Marca</label> <input
                 type="text" class="form-control" id="marca" name="marca" placeholder="Marca do Carro" />
         </div>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="radio" aria-label="Radio button for following text input" id="oid_tipo_veiculo" name="oid_tipo_veiculo">
+                    <label> Utilitario</label>
+                    <input type="radio" aria-label="Radio button for following text input"  name="oid_tipo_veiculo">
+                    <label> Moto</label>
+                    <input type="radio" aria-label="Radio button for following text input"  name="oid_tipo_veiculo">
+                    <label> Carro</label>
+                </div>
+            </div>
+        </div>
+
         <button type="submit" class="btn-success">Cadastrar</button>
     </form>
 

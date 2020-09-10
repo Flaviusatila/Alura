@@ -14,8 +14,19 @@ public class Estacionamento {
     private Long totalFaturamentoUtilitario;
     private Long totalFaturamentoMoto;
 
-
     public Estacionamento() {
+    }
+
+    public void setTotalFaturamento(Long totalFaturamento) {
+        this.totalFaturamento = totalFaturamento;
+    }
+
+    public void setTotalFaturamentoCarro(Long totalFaturamentoCarro) {
+        this.totalFaturamentoCarro = totalFaturamentoCarro;
+    }
+
+    public void setTotalFaturamentoUtilitario(Long totalFaturamentoUtilitario) {
+        this.totalFaturamentoUtilitario = totalFaturamentoUtilitario;
     }
 
     public void setValorHora(Long valorHora) {

@@ -13,7 +13,7 @@ public class Veiculo {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @NotNull
-    private Long   id;
+    private long   id;
     private String placa;
     private String marca;
     private String modelo;

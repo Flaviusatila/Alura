@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Saida Veiculos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Veiculos</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>SaidaVeiculos</h1>
+
+<div class="container">
+    <div id="saidaVeiculos">
+        <h1>Placa Carro <span th:text="${veiculos.placa}"></span></h1>
+        <h1>Modelo Carro <span th:text="${veiculos.modelo}"></span></h1>
+        <h1>Marca Carro <span th:text="${veiculos.marca}"></span></h1>
+        <h1>Hora Entrada <span th:text="${veiculos.horaEntrada}"></span></h1>
+
+
+        <form action="salvar" method="post">
+            <button type="submit" class="btn-success">Pagar e Dar Saida Veiculo</button>
+        </form>
+    </div>
+</div>
+
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>

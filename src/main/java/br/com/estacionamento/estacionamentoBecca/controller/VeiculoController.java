@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -33,6 +35,12 @@ public class VeiculoController {
         Veiculo veiculos = veiculosService.findById(id);
         mv.addObject("veiculos",veiculos);
         return mv;
+    }
+    @RequestMapping(value = "/veiculos", method = RequestMethod.POST)
+    public String salvarVeiculo(Veiculo veiculo, RedirectAttributes atributes){
+        veiculo.setHoraEntrada(LocalDateTime.now());
+        veiculosService.save(veiculo);
+        return "redirect:/veiculos";
     }
 
 }
