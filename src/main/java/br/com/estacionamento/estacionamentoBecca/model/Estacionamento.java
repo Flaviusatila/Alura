@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class Estacionamento {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long   id;
-    private Long valorHora ;
+    private long   id;
+    private long valorHora ;
     private Long totalFaturamento;
     private Long totalFaturamentoCarro;
     private Long totalFaturamentoUtilitario;

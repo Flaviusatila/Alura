@@ -21,6 +21,10 @@ public class Veiculo {
     @NotNull
     private Long oid_tipo_veiculo;
 
+    public void setOid_tipo_veiculo(Long oid_tipo_veiculo) {
+        this.oid_tipo_veiculo = oid_tipo_veiculo;
+    }
+
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "HH:mm dd-MM-yyyy")
     private LocalDateTime horaEntrada;
 

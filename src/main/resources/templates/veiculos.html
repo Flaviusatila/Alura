@@ -8,7 +8,7 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/veiculos">Estacionamento</a>
+        <a class="navbar-brand" href="/">Estacionamento</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="form-inline my-2 my-lg-0">
@@ -25,6 +25,7 @@
             <h1>Veiculos Estacionados</h1>
             <thead>
             <tr>
+                <th>Informações</th>
                 <th>Placa</th>
                 <th>Modelo</th>
                 <th>Marca</th>
@@ -32,8 +33,8 @@
             </tr>
             </thead>
             <tr th:each="veiculo : ${veiculos}">
-<!--                <a th:href="${(#mvc.url('VC#getVeiculosSaida').arg(0, veiculo.id)).build()}"></a>-->
-<!--                    <td><span th:text="${veiculo.id}"></span></td>-->
+               <td> <a th:href="@{/veiculos/{id}(id=${veiculo.id})}">Encerrar Estacionamento</a></td>
+<!--                <td><a th:href="/veiculos/${veiculo.id}">Link</a></td>-->
                     <td><span th:text="${veiculo.placa}"></span></td>
                     <td><span th:text="${veiculo.modelo}"></span></td>
                     <td><span th:text="${veiculo.marca}"></span></td>
@@ -42,7 +43,7 @@
 
         </table>
     </div>
-<!--    <a th:href="@{/veiculos/3">Qualquer Coisa</a>-->
+
     <hr/>
 
     <h1>Adicionar Veiculo</h1>
@@ -63,11 +64,11 @@
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text">
-                    <input type="radio" aria-label="Radio button for following text input" id="oid_tipo_veiculo" name="oid_tipo_veiculo">
+                    <input type="radio" aria-label="Radio button for following text input" value="1" name="oid_tipo_veiculo">
                     <label> Utilitario</label>
-                    <input type="radio" aria-label="Radio button for following text input"  name="oid_tipo_veiculo">
+                    <input type="radio" aria-label="Radio button for following text input" value="2" name="oid_tipo_veiculo">
                     <label> Moto</label>
-                    <input type="radio" aria-label="Radio button for following text input"  name="oid_tipo_veiculo">
+                    <input type="radio" aria-label="Radio button for following text input" value="3" name="oid_tipo_veiculo">
                     <label> Carro</label>
                 </div>
             </div>

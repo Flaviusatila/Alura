@@ -1,6 +1,7 @@
 package br.com.estacionamento.estacionamentoBecca.controller;
 
 
+import br.com.estacionamento.estacionamentoBecca.dto.VeiculoDTO;
 import br.com.estacionamento.estacionamentoBecca.model.Veiculo;
 import br.com.estacionamento.estacionamentoBecca.service.VeiculosService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,8 +38,13 @@ public class VeiculoController {
         return mv;
     }
     @RequestMapping(value = "/veiculos", method = RequestMethod.POST)
-    public String salvarVeiculo(Veiculo veiculo, RedirectAttributes atributes){
+    public String salvarVeiculo(VeiculoDTO veiculoDto, RedirectAttributes atributes){
+        Veiculo veiculo = new Veiculo();
         veiculo.setHoraEntrada(LocalDateTime.now());
+        veiculo.setPlaca( veiculoDto.getPlaca() );
+        veiculo.setModelo( veiculoDto.getModelo() );
+        veiculo.setMarca( veiculoDto.getMarca() );
+        veiculo.setOid_tipo_veiculo( veiculoDto.getOid_tipo_veiculo() );
         veiculosService.save(veiculo);
         return "redirect:/veiculos";
     }

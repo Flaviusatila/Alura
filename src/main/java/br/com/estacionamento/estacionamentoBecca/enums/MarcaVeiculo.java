@@ -1,4 +1,4 @@
-package br.com.estacionamento.estacionamentoBecca.model;
+package br.com.estacionamento.estacionamentoBecca.enums;
 
 public enum  MarcaVeiculo {
     Acura, Agrale, Alfa_Romeo, Asia, AM_General, Aston_Martin, Audi, Adly, Aprilia, Atala, Amazonas, Austin, Apperson, Ashok_Leyland, Alpina, Adler, Ascari, Abarth, Autobianchi, Aixam, AMG, AZLK, Avtokam, ACMAT, Albion, Argyle, Askam, AsparkOwl,Tramontana,
