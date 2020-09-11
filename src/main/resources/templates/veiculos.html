@@ -11,10 +11,13 @@
         <a class="navbar-brand" href="/">Estacionamento</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Placa do Carro" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+<!--            <form class="form-inline my-2 my-lg-0" method="get">-->
+<!--                <input class="form-control mr-sm-2" type="search" placeholder="Placa do Carro" aria-label="Search" name="placa">-->
+<!--                <a th:href="@{/veiculos/{placa}(placa=${veiculos.placa})}">-->
+<!--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--                </a>-->
+<!--&lt;!&ndash;                th:href="@{/veiculos/{placa}(placa=${veiculos.placa})}"&ndash;&gt;-->
+<!--            </form>-->
         </div>
     </nav>
 </header>
@@ -65,11 +68,11 @@
             <div class="input-group-prepend">
                 <div class="input-group-text">
                     <input type="radio" aria-label="Radio button for following text input" value="1" name="oid_tipo_veiculo">
-                    <label> Utilitario</label>
+                    <label> Carro</label>
                     <input type="radio" aria-label="Radio button for following text input" value="2" name="oid_tipo_veiculo">
                     <label> Moto</label>
-                    <input type="radio" aria-label="Radio button for following text input" value="3" name="oid_tipo_veiculo">
-                    <label> Carro</label>
+                    <input type="radio" aria-label="Radio button for following text input" value="3" name="fatorEstacionamento">
+                    <label> E um Utilitario ?</label>
                 </div>
             </div>
         </div>

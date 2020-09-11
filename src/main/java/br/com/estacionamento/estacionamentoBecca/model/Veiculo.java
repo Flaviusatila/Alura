@@ -33,6 +33,10 @@ public class Veiculo {
 
     private double totalEstacionamento;
 
+    public void setTotalEstacionamento(double totalEstacionamento) {
+        this.totalEstacionamento = totalEstacionamento;
+    }
+
     public String getPlaca() {
         return placa;
     }

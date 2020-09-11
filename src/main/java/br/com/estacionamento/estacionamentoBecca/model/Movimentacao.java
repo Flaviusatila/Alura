@@ -3,6 +3,7 @@ package br.com.estacionamento.estacionamentoBecca.model;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 //@Table(name = "movimentacao", schema="estacionamento")
@@ -15,7 +16,7 @@ public class Movimentacao {
     private Long id_veiculo;
 
     @NotNull
-    private Long id_estacionamento;
+    private long id_estacionamento;
 
     @NotNull
     private Long id_tipo_veiculo;
@@ -36,7 +37,7 @@ public class Movimentacao {
         return id_estacionamento;
     }
 
-    public void setId_estacionamento(Long id_estacionamento) {
+    public void setId_estacionamento(long id_estacionamento) {
         this.id_estacionamento = id_estacionamento;
     }
 

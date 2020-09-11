@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class VeiculoController {
@@ -27,6 +28,7 @@ public class VeiculoController {
         ModelAndView mv = new ModelAndView("veiculos");
         List<Veiculo> veiculos = veiculosService.findAll();
         mv.addObject("veiculos",veiculos);
+        mv.setViewName("veiculos");
         return mv;
     }
 
@@ -37,6 +39,16 @@ public class VeiculoController {
         mv.addObject("veiculos",veiculos);
         return mv;
     }
+
+//    @GetMapping(value = "/veiculos/{placa}")
+//    public ModelAndView getVeiculosPlaca(@PathVariable("placa") String placa){
+//        ModelAndView mv = new ModelAndView("saidaVeiculos");
+//        Optional<Veiculo> veiculos = veiculosService.findOne(placa);
+//        mv.addObject("veiculos",veiculos);
+//        mv.setViewName("saidaVeiculos");
+//        return mv;
+//    }
+
     @RequestMapping(value = "/veiculos", method = RequestMethod.POST)
     public String salvarVeiculo(VeiculoDTO veiculoDto, RedirectAttributes atributes){
         Veiculo veiculo = new Veiculo();
@@ -44,6 +56,7 @@ public class VeiculoController {
         veiculo.setPlaca( veiculoDto.getPlaca() );
         veiculo.setModelo( veiculoDto.getModelo() );
         veiculo.setMarca( veiculoDto.getMarca() );
+        veiculo.setFatorEstacionamento( veiculoDto.getFatorEstacionamento());
         veiculo.setOid_tipo_veiculo( veiculoDto.getOid_tipo_veiculo() );
         veiculosService.save(veiculo);
         return "redirect:/veiculos";

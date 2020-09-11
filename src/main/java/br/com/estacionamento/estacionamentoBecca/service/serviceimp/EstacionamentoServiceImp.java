@@ -16,6 +16,11 @@ public class EstacionamentoServiceImp implements EstacionamentoService {
 
 
     @Override
+    public Estacionamento findById(long id) {
+        return estacionamentoRepository.findById(id).get();
+    }
+
+    @Override
     public List<Estacionamento> findAll() {
         return estacionamentoRepository.findAll();
     }

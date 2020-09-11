@@ -6,6 +6,15 @@ public class VeiculoDTO {
     private String marca;
     private String modelo;
     private long  oid_tipo_veiculo;
+    private double fatorEstacionamento;
+
+    public double getFatorEstacionamento() {
+        return fatorEstacionamento;
+    }
+
+    public void setFatorEstacionamento(double fatorEstacionamento) {
+        this.fatorEstacionamento = fatorEstacionamento;
+    }
 
     public long getOid_tipo_veiculo() {
         return oid_tipo_veiculo;

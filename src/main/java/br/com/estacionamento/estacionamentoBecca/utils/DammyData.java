@@ -1,9 +1,12 @@
 package br.com.estacionamento.estacionamentoBecca.utils;
 
 import br.com.estacionamento.estacionamentoBecca.model.Estacionamento;
+import br.com.estacionamento.estacionamentoBecca.model.Movimentacao;
 import br.com.estacionamento.estacionamentoBecca.model.Veiculo;
 import br.com.estacionamento.estacionamentoBecca.repository.EstacionamentoRepository;
+import br.com.estacionamento.estacionamentoBecca.repository.MovimentacaoRepository;
 import br.com.estacionamento.estacionamentoBecca.repository.VeiculoRepository;
+import br.com.estacionamento.estacionamentoBecca.service.MovimentacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,19 +24,22 @@ public class DammyData {
     @Autowired
     EstacionamentoRepository estacionamentoRepository;
 
-//    @PostConstruct
+    @Autowired
+    MovimentacaoService movimentacaoService;
+
+ //   @PostConstruct
     public void saveVeiculos() {
         List<Veiculo> veiculosList = new ArrayList<>();
         Veiculo v1 = new Veiculo();
 
-        v1.setPlaca("GTA-555");
+        v1.setPlaca("TES6-555");
         v1.setModelo("Vectra");
         v1.setMarca("Ford");
         v1.setHoraEntrada(LocalDateTime.now());
 
         Veiculo v2 = new Veiculo();
 
-        v2.setPlaca("GSD-775");
+        v2.setPlaca("TES5-775");
         v2.setModelo("Focus");
         v2.setMarca("Ford");
         v2.setHoraEntrada(LocalDateTime.now());
@@ -43,6 +49,7 @@ public class DammyData {
 
         for (Veiculo veiculo : veiculosList) {
             Veiculo veiculoSave = veiculoRepository.save(veiculo);
+            movimentacaoService.saidaVeiculo( veiculoSave );
             System.out.println(veiculoSave.getPlaca());
         }
     }
