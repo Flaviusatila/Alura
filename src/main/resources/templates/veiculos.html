@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="form-inline my-2 my-lg-0 " method="get">
                 <input class="form-control mr-sm-2" type="search" placeholder="Placa do Carro" aria-label="Search" name="placa">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Procurar</button>
 
             </form>
         </div>
@@ -23,7 +23,7 @@
 </header>
 <div class="container caixaGeral">
 
-    <div id="veiculos">
+    <div>
         <table class="table table-hover">
             <h1>Veiculos Estacionados</h1>
             <thead>
@@ -32,18 +32,23 @@
                 <th>Placa</th>
                 <th>Modelo</th>
                 <th>Marca</th>
-                <th>Hora Entrada</th>
+<!--                <th>Hora Entrada</th>-->
             </tr>
             </thead>
+            <tbody>
+<!--            <tr>-->
+<!--               <td>Teste</td>-->
+<!--            </tr>-->
             <tr th:each="veiculo : ${veiculos}">
                <td> <a th:href="@{/veiculos/{id}(id=${veiculo.id})}">Encerrar</a></td>
 <!--                <td><a th:href="/veiculos/${veiculo.id}">Link</a></td>-->
-                    <td th:text="${veiculo.placa}"></td>
-                    <td th:text="${veiculo.modelo}"></td>
-                    <td th:text="${veiculo.marca}"></td>
-                    <td th:text="${veiculo.horaEntrada}"></td>
+                    <td><span th:text="${veiculo.placa}"></span></td>
+                    <td><span th:text="${veiculo.modelo}"></span></td>
+                    <td><span th:text="${veiculo.marca}"></span></td>
+<!--                    <td><span th:datetime="${veiculo.horaEntrada}"></span></td>-->
             </tr>
-
+            <tr>Ta aparecendo ?</tr>
+            </tbody>
         </table>
     </div>
 

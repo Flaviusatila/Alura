@@ -1,5 +1,7 @@
 package br.com.estacionamento.estacionamentoBecca.dto;
 
+import java.time.LocalDateTime;
+
 public class VeiculoDTO {
 
     private String placa;
@@ -7,6 +9,15 @@ public class VeiculoDTO {
     private String modelo;
     private long  oid_tipo_veiculo;
     private double fatorEstacionamento;
+    private LocalDateTime horaEntrada;
+
+    public LocalDateTime getHoraEntrada() {
+        return horaEntrada;
+    }
+
+    public void setHoraEntrada(LocalDateTime horaEntrada) {
+        this.horaEntrada = horaEntrada;
+    }
 
     public double getFatorEstacionamento() {
         return fatorEstacionamento;

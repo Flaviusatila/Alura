@@ -27,8 +27,8 @@ public class VeiculoController {
         if (StringUtils.isEmpty( placa )){
             ModelAndView mv = new ModelAndView("veiculos");
             List<Veiculo> veiculos = veiculosService.findAll();
-            mv.addObject("veiculo",veiculos);
-            mv.setViewName( "veiculos" );
+            mv.addObject("veiculos",veiculos);
+//            mv.addObject( veiculos );
             return mv;
         }
             ModelAndView mv = new ModelAndView("saidaVeiculos");
@@ -37,6 +37,13 @@ public class VeiculoController {
             mv.setViewName( "saidaVeiculos" );
             return mv;
     }
+
+//    @RequestMapping(value = "/veiculos", method = RequestMethod.GET)
+//    public ModelAndView getVeiculos() {
+//        ModelAndView mav = new ModelAndView("veiculos");
+//        mav.addObject("veiculo", veiculosService.findAll());
+//        return mav;
+//    }
 
     @RequestMapping(value = "/veiculos/{id}", method = RequestMethod.GET)
     public ModelAndView getVeiculosSaida(@PathVariable("id") long id){
