@@ -4,8 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Veiculos</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pinkstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pinkstrap.css">
 </head>
 <body>
 <header class="caixaGeral">
@@ -45,9 +45,9 @@
                     <td><span th:text="${veiculo.placa}"></span></td>
                     <td><span th:text="${veiculo.modelo}"></span></td>
                     <td><span th:text="${veiculo.marca}"></span></td>
-<!--                    <td><span th:datetime="${veiculo.horaEntrada}"></span></td>-->
+<!--                    <td><span th:text="${#dates.format(veiculo.horaEntrada, 'dd-MM-yyyy HH:mm') }"></span></td>-->
             </tr>
-            <tr>Ta aparecendo ?</tr>
+<!--            <tr>Ta aparecendo ?</tr>-->
             </tbody>
         </table>
     </div>
@@ -55,21 +55,27 @@
     <hr/>
 
     <h1>Adicionar Veiculo</h1>
-    <form method="post">
-        <div class="form-group">
+    <form method="post" th:object="${veiculo}">
+        <div class="form-group col-lg-4">
             <label for="placa">Placa</label> <input type="text"
                                                            class="form-control" id="placa" name="placa" placeholder="Placa" />
         </div>
-        <div class="form-group">
+        <div class="form-group col-lg-4">
             <label for="modelo">Modelo</label> <input type="text"
                                                      class="form-control" id="modelo" name="modelo" placeholder="Modelo Carro" />
         </div>
-        <div class="form-group">
+        <div class="form-group col-lg-4">
             <label for="marca">Marca</label> <input
                 type="text" class="form-control" id="marca" name="marca" placeholder="Marca do Carro" />
+<!--            <label th:for="marca">Marca Veiculo</label><br>-->
+<!--            <select class="dropboxStyle" name="marca" th:field="*{marca}" id="marca">-->
+<!--                <option  th:each="marcaveiculo : ${marcaveiculo}"-->
+<!--                         th:value="${macarveiculo}"-->
+<!--                         th:text="${marcaveiculo.name}" selected="selected"></option>-->
+<!--            </select>-->
         </div>
 
-        <div class="input-group">
+        <div class="input-group col-lg-12">
             <div class="input-group-prepend">
                 <div class="input-group-text">
                     <input type="radio" aria-label="Radio button for following text input" value="1" name="oid_tipo_veiculo">

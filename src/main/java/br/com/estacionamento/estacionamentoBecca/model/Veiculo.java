@@ -1,5 +1,6 @@
 package br.com.estacionamento.estacionamentoBecca.model;
 
+import br.com.estacionamento.estacionamentoBecca.enums.MarcaVeiculo;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.NotNull;
 

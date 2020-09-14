@@ -1,5 +1,7 @@
 package br.com.estacionamento.estacionamentoBecca.dto;
 
+import br.com.estacionamento.estacionamentoBecca.enums.MarcaVeiculo;
+
 import java.time.LocalDateTime;
 
 public class VeiculoDTO {
@@ -42,6 +44,11 @@ public class VeiculoDTO {
     public void setPlaca(String placa) {
         this.placa = placa;
     }
+
+//    public String getMarca(Model model) {
+//        String marca = model.toString();
+//        return marca;
+//    }
 
     public String getMarca() {
         return marca;

@@ -34,14 +34,14 @@ public class DammyData {
 
         v1.setPlaca("TES6-555");
         v1.setModelo("Vectra");
-        v1.setMarca("Ford");
+//        v1.setMarca("Ford");
         v1.setHoraEntrada(LocalDateTime.now());
 
         Veiculo v2 = new Veiculo();
 
         v2.setPlaca("TES5-775");
         v2.setModelo("Focus");
-        v2.setMarca("Ford");
+//        v2.setMarca("Ford");
         v2.setHoraEntrada(LocalDateTime.now());
 
         veiculosList.add(v1);

@@ -2,16 +2,21 @@ package br.com.estacionamento.estacionamentoBecca.controller;
 
 
 import br.com.estacionamento.estacionamentoBecca.dto.VeiculoDTO;
+import br.com.estacionamento.estacionamentoBecca.enums.MarcaVeiculo;
 import br.com.estacionamento.estacionamentoBecca.model.Veiculo;
 import br.com.estacionamento.estacionamentoBecca.service.VeiculosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,6 +33,7 @@ public class VeiculoController {
             ModelAndView mv = new ModelAndView("veiculos");
             List<Veiculo> veiculos = veiculosService.findAll();
             mv.addObject("veiculos",veiculos);
+            mv.addObject( "marcaveiculo", MarcaVeiculo.values() );
 //            mv.addObject( veiculos );
             return mv;
         }
@@ -56,7 +62,10 @@ public class VeiculoController {
 
 
     @RequestMapping(value = "/veiculos", method = RequestMethod.POST)
-    public String salvarVeiculo(VeiculoDTO veiculoDto, RedirectAttributes atributes){
+    public String salvarVeiculo(
+//            @ModelAttribute MarcaVeiculo marcaVeiculo,
+//            @ModelAttribute("marcaveiculo")Model marcaveiculo,
+            VeiculoDTO veiculoDto){
         Veiculo veiculo = new Veiculo();
         veiculo.setHoraEntrada(LocalDateTime.now());
         veiculo.setPlaca( veiculoDto.getPlaca() );

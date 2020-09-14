@@ -46,3 +46,10 @@
 .form-group label{
     font-size: 30px;
 }
+
+.dropboxStyle {
+    width: 225px;
+    height: 35px;
+    border: 1px solid silver;
+    border-radius: 15px;
+}
