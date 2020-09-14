@@ -6,5 +6,5 @@ public interface CalculosService {
 
 //    long totalFaturamento(Veiculo veiculo);
       long totalFaturamento();
-
+//
 }

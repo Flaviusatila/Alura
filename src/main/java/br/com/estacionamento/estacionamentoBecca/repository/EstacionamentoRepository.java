@@ -10,6 +10,7 @@ public interface EstacionamentoRepository extends JpaRepository<Estacionamento, 
     @Query(value = "SELECT SUM(total_faturamento) " +
             "FROM movimentacao", nativeQuery = true)
     public double totalFaturamento();
+
     @Query(value = "SELECT SUM(total_faturamento) FROM movimentacao " +
             "WHERE oid_tipo_veiculo = 1", nativeQuery = true)
     public double totalFaturamentoUtilitario();

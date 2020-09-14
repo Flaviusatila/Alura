@@ -6,7 +6,6 @@ import javax.persistence.*;
 import java.util.Optional;
 
 @Entity
-//@Table(name = "movimentacao", schema="estacionamento")
 public class Movimentacao {
 
     @Id
@@ -16,7 +15,7 @@ public class Movimentacao {
     private Long id_veiculo;
 
     @NotNull
-    private long id_estacionamento;
+    private Long id_estacionamento;
 
     @NotNull
     private Long id_tipo_veiculo;

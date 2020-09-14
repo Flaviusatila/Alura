@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -24,12 +25,12 @@ public class EstacionamentoController {
         ModelAndView mv = new ModelAndView("estacionamentos");
         List<Estacionamento> estacionamentos = estacionamentoService.findAll();
         mv.addObject("estacionamento",estacionamentos);
-        mv.setViewName("index");
+        mv.setViewName( "index" );
         return mv;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String getEstacionamento(EstacionamentoDTO estacionamentoDTO){
+    public String getEstacionamento(EstacionamentoDTO estacionamentoDTO, RedirectAttributes atributes){
         Estacionamento estacionamento = new Estacionamento();
         estacionamento.setValorHora( estacionamentoDTO.getValorHora() );
         estacionamentoService.save( estacionamento );

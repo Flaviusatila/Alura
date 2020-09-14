@@ -4,24 +4,24 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Veiculos</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pinkstrap.css">
 </head>
 <body>
-<header>
+<header class="caixaGeral">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">Estacionamento</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-<!--            <form class="form-inline my-2 my-lg-0" method="get">-->
-<!--                <input class="form-control mr-sm-2" type="search" placeholder="Placa do Carro" aria-label="Search" name="placa">-->
-<!--                <a th:href="@{/veiculos/{placa}(placa=${veiculos.placa})}">-->
-<!--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-<!--                </a>-->
-<!--&lt;!&ndash;                th:href="@{/veiculos/{placa}(placa=${veiculos.placa})}"&ndash;&gt;-->
-<!--            </form>-->
+            <form class="form-inline my-2 my-lg-0 " method="get">
+                <input class="form-control mr-sm-2" type="search" placeholder="Placa do Carro" aria-label="Search" name="placa">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+            </form>
         </div>
     </nav>
 </header>
-<div class="container">
+<div class="container caixaGeral">
 
     <div id="veiculos">
         <table class="table table-hover">
@@ -36,12 +36,12 @@
             </tr>
             </thead>
             <tr th:each="veiculo : ${veiculos}">
-               <td> <a th:href="@{/veiculos/{id}(id=${veiculo.id})}">Encerrar Estacionamento</a></td>
+               <td> <a th:href="@{/veiculos/{id}(id=${veiculo.id})}">Encerrar</a></td>
 <!--                <td><a th:href="/veiculos/${veiculo.id}">Link</a></td>-->
-                    <td><span th:text="${veiculo.placa}"></span></td>
-                    <td><span th:text="${veiculo.modelo}"></span></td>
-                    <td><span th:text="${veiculo.marca}"></span></td>
-                    <td><span th:text="${veiculo.horaEntrada}"></span></td>
+                    <td th:text="${veiculo.placa}"></td>
+                    <td th:text="${veiculo.modelo}"></td>
+                    <td th:text="${veiculo.marca}"></td>
+                    <td th:text="${veiculo.horaEntrada}"></td>
             </tr>
 
         </table>
@@ -69,15 +69,19 @@
                 <div class="input-group-text">
                     <input type="radio" aria-label="Radio button for following text input" value="1" name="oid_tipo_veiculo">
                     <label> Carro</label>
+                    <br>
                     <input type="radio" aria-label="Radio button for following text input" value="2" name="oid_tipo_veiculo">
                     <label> Moto</label>
+                    <br>
                     <input type="radio" aria-label="Radio button for following text input" value="3" name="fatorEstacionamento">
                     <label> E um Utilitario ?</label>
                 </div>
             </div>
         </div>
 
-        <button type="submit" class="btn-success">Cadastrar</button>
+        <div class="botaoCastrar">
+            <button type="submit" class="btn-success ">Cadastrar</button>
+        </div>
     </form>
 
 </div>

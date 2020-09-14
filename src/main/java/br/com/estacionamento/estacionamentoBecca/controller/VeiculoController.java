@@ -6,10 +6,8 @@ import br.com.estacionamento.estacionamentoBecca.model.Veiculo;
 import br.com.estacionamento.estacionamentoBecca.service.VeiculosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -24,30 +22,31 @@ public class VeiculoController {
     VeiculosService veiculosService;
 
     @RequestMapping(value = "/veiculos", method = RequestMethod.GET)
-    public ModelAndView getVeiculos(){
-        ModelAndView mv = new ModelAndView("veiculos");
-        List<Veiculo> veiculos = veiculosService.findAll();
-        mv.addObject("veiculos",veiculos);
-        mv.setViewName("veiculos");
-        return mv;
+    public ModelAndView getVeiculos(
+            @RequestParam(name = "placa", required = false) String placa){
+        if (StringUtils.isEmpty( placa )){
+            ModelAndView mv = new ModelAndView("veiculos");
+            List<Veiculo> veiculos = veiculosService.findAll();
+            mv.addObject("veiculo",veiculos);
+            mv.setViewName( "veiculos" );
+            return mv;
+        }
+            ModelAndView mv = new ModelAndView("saidaVeiculos");
+            Optional<Veiculo> veiculos = veiculosService.findOne(placa);
+            mv.addObject("veiculo",veiculos.get());
+            mv.setViewName( "saidaVeiculos" );
+            return mv;
     }
 
     @RequestMapping(value = "/veiculos/{id}", method = RequestMethod.GET)
     public ModelAndView getVeiculosSaida(@PathVariable("id") long id){
         ModelAndView mv = new ModelAndView("saidaVeiculos");
         Veiculo veiculos = veiculosService.findById(id);
-        mv.addObject("veiculos",veiculos);
+        mv.addObject("veiculo",veiculos);
+        mv.setViewName( "saidaVeiculos" );
         return mv;
     }
 
-//    @GetMapping(value = "/veiculos/{placa}")
-//    public ModelAndView getVeiculosPlaca(@PathVariable("placa") String placa){
-//        ModelAndView mv = new ModelAndView("saidaVeiculos");
-//        Optional<Veiculo> veiculos = veiculosService.findOne(placa);
-//        mv.addObject("veiculos",veiculos);
-//        mv.setViewName("saidaVeiculos");
-//        return mv;
-//    }
 
     @RequestMapping(value = "/veiculos", method = RequestMethod.POST)
     public String salvarVeiculo(VeiculoDTO veiculoDto, RedirectAttributes atributes){

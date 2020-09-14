@@ -1,29 +1,64 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Veiculos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pinkstrap.css">
+    <title>Veiculos</title>
 </head>
 <body>
-
-<div class="container">
+<header class="caixaGeral">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Estacionamento</a>
+        <a class="navbar-brand" href="/veiculos">Lista Veiculos</a>
+    </nav>
+</header>
+<div class="container caixaGeral">
     <div id="saidaVeiculos">
-        <h1>Placa Carro <span th:text="${veiculos.placa}"></span></h1>
-        <h1>Modelo Carro <span th:text="${veiculos.modelo}"></span></h1>
-        <h1>Marca Carro <span th:text="${veiculos.marca}"></span></h1>
-        <h1>Hora Entrada <span th:text="${veiculos.horaEntrada}"></span></h1>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Placa</label>
+                <p><span th:text="${veiculo.placa}"></span></p>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Modelo</label>
+                <p><p><span th:text="${veiculo.modelo}"></span></p></p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Marca</label>
+                <p><p><span th:text="${veiculo.marca}"></span></p></p>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Hora Entrada</label>
+<!--                <span th:text="${veiculo.horaEntrada}"></span>-->
+<!--                <p th:text="${#temporals.format(veiculo.horaEntrada, 'dd MMM yyyy')}"></p>-->
+            </div>
 
-
-        <form method="post">
-            <button type="submit" class="btn-success">Pagar e Dar Saida Veiculo</button>
-        </form>
+            <form method="post" class="form-row">
+                <div class="form-group col-md-10 botaoAtualizar">
+                    <label>Alterar Hora Entrada</label>
+                    <p>
+                        <input type="datetime-local">
+                    </p>
+                    <button type="submit" class="btn-success">Atualizar</button>
+                    <div>
+                        <div class="form-group col-md-10 botaoCastrar">
+                            <button type="submit" class="btn-success">Dar Saida</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
-<script
-        src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>

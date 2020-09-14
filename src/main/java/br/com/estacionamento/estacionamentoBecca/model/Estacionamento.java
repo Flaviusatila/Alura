@@ -3,19 +3,53 @@ package br.com.estacionamento.estacionamentoBecca.model;
 import javax.persistence.*;
 
 @Entity
-//@Table(name = "estacionamento", schema="estacionamento")
 public class Estacionamento {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long   id;
-    private long valorHora ;
+    private Long   id;
+    private Long valorHora ;
     private Long totalFaturamento;
     private Long totalFaturamentoCarro;
     private Long totalFaturamentoUtilitario;
     private Long totalFaturamentoMoto;
 
+
     public Estacionamento() {
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getValorHora() {
+        return valorHora;
+    }
+
+    public Long getTotalFaturamento() {
+        return totalFaturamento;
+    }
+
+    public Long getTotalFaturamentoCarro() {
+        return totalFaturamentoCarro;
+    }
+
+    public Long getTotalFaturamentoUtilitario() {
+        return totalFaturamentoUtilitario;
+    }
+
+    public Long getTotalFaturamentoMoto() {
+        return totalFaturamentoMoto;
+    }
+
+    public void setTotalFaturamentoMoto(Long totalFaturamentoMoto) {
+        this.totalFaturamentoMoto = totalFaturamentoMoto;
+    }
+
+
 
     public void setTotalFaturamento(Long totalFaturamento) {
         this.totalFaturamento = totalFaturamento;
@@ -33,31 +67,5 @@ public class Estacionamento {
         this.valorHora = valorHora;
     }
 
-    public double getValorHora() {
-        return valorHora;
-    }
 
-    public double getTotalFaturamento() {
-        return totalFaturamento;
-    }
-
-    public double getTotalFaturamentoCarro() {
-        return totalFaturamentoCarro;
-    }
-
-    public double getTotalFaturamentoUtilitario() {
-        return totalFaturamentoUtilitario;
-    }
-
-    public double getTotalFaturamentoMoto() {
-        return totalFaturamentoMoto;
-    }
-
-    public void setTotalFaturamentoMoto(Long totalFaturamentoMoto) {
-        this.totalFaturamentoMoto = totalFaturamentoMoto;
-    }
-
-    public Long getId() {
-        return id;
-    }
 }

@@ -7,17 +7,16 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-//@Table(name = "veiculo")
 public class Veiculo {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @NotNull
-    private long   id;
+    private Long   id;
     private String placa;
     private String marca;
     private String modelo;
-    private double fatorEstacionamento;
+    private Double fatorEstacionamento;
     @NotNull
     private Long oid_tipo_veiculo;
 
@@ -31,10 +30,18 @@ public class Veiculo {
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "HH:mm dd-MM-yyyy")
     private LocalDateTime horaSaida;
 
-    private double totalEstacionamento;
+    private Double totalEstacionamento;
 
     public void setTotalEstacionamento(double totalEstacionamento) {
         this.totalEstacionamento = totalEstacionamento;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getPlaca() {
@@ -61,16 +68,16 @@ public class Veiculo {
         this.modelo = modelo;
     }
 
-    public double getFatorEstacionamento() {
+    public Double getFatorEstacionamento() {
         return fatorEstacionamento;
     }
 
-    public void setFatorEstacionamento(double fatorEstacionamento) {
+    public void setFatorEstacionamento(Double fatorEstacionamento) {
         this.fatorEstacionamento = fatorEstacionamento;
     }
 
-    public LocalDateTime getHoraEntrada() {
-        return horaEntrada;
+    public Long getOid_tipo_veiculo() {
+        return oid_tipo_veiculo;
     }
 
     public void setHoraEntrada(LocalDateTime horaEntrada) {
@@ -85,15 +92,11 @@ public class Veiculo {
         this.horaSaida = horaSaida;
     }
 
-    public double getTotalEstacionamento() {
+    public Double getTotalEstacionamento() {
         return totalEstacionamento;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public Long getOid_tipo_veiculo() {
-        return oid_tipo_veiculo;
+    public void setTotalEstacionamento(Double totalEstacionamento) {
+        this.totalEstacionamento = totalEstacionamento;
     }
 }
