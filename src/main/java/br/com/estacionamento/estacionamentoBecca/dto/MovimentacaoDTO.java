@@ -9,6 +9,16 @@ public class MovimentacaoDTO {
     private Long id_tipo_veiculo;
     private Long total_valor_estacionado_movimentado;
 
+    private Double hrEstacionamentoCobrado;
+
+    public Double getHrEstacionamentoCobrado() {
+        return hrEstacionamentoCobrado;
+    }
+
+    public void setHrEstacionamentoCobrado(Double hrEstacionamentoCobrado) {
+        this.hrEstacionamentoCobrado = hrEstacionamentoCobrado;
+    }
+
     public Long getId_veiculo() {
         return id_veiculo;
     }

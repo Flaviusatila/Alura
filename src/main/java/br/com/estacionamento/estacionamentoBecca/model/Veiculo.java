@@ -81,6 +81,10 @@ public class Veiculo {
         return oid_tipo_veiculo;
     }
 
+    public LocalDateTime getHoraEntrada() {
+        return horaEntrada;
+    }
+
     public void setHoraEntrada(LocalDateTime horaEntrada) {
         this.horaEntrada = horaEntrada;
     }

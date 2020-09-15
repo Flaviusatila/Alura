@@ -1,5 +1,6 @@
 package br.com.estacionamento.estacionamentoBecca.service.serviceimp;
 
+import br.com.estacionamento.estacionamentoBecca.model.Estacionamento;
 import br.com.estacionamento.estacionamentoBecca.model.Veiculo;
 import br.com.estacionamento.estacionamentoBecca.repository.VeiculoRepository;
 import br.com.estacionamento.estacionamentoBecca.service.VeiculosService;
@@ -38,5 +39,27 @@ public class VeiculosServiceImp implements VeiculosService {
     public Veiculo save(Veiculo veiculo) {
         return veiculoRepository.save(veiculo);
     }
+
+
+
+//    public Double totalHoras(Veiculo veiculo, Estacionamento estacionamento) {
+//        int horaDuration = veiculo.getHoraSaida().getHour() - veiculo.getHoraEntrada().getHour();
+//        int minutoDuration = veiculo.getHoraSaida().getMinute();
+//        Double valorTotalEstacionado = null;
+//        if (horaDuration > 0) {
+//            valorTotalEstacionado = Double.valueOf( horaDuration * estacionamento.getValorHora() );
+//            if (minutoDuration >= 30)
+//                valorTotalEstacionado += Double.valueOf( estacionamento.getValorHora() );
+//            if (veiculo.getFatorEstacionamento() != 0)
+//                valorTotalEstacionado = valorTotalEstacionado * 0.15;
+//
+//        }else  if (minutoDuration >= 30){
+//            valorTotalEstacionado = Double.valueOf( estacionamento.getValorHora() );
+//            if (veiculo.getFatorEstacionamento() != 0)
+//                valorTotalEstacionado = valorTotalEstacionado * 0.15;
+//        }
+//
+//        return valorTotalEstacionado;
+//    }
 
 }

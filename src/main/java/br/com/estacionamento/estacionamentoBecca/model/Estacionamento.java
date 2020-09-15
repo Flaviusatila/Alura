@@ -7,7 +7,7 @@ public class Estacionamento {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long   id;
-    private Long valorHora ;
+    private Double valorHora ;
     private Long totalFaturamento;
     private Long totalFaturamentoCarro;
     private Long totalFaturamentoUtilitario;
@@ -25,7 +25,7 @@ public class Estacionamento {
         this.id = id;
     }
 
-    public Long getValorHora() {
+    public Double getValorHora() {
         return valorHora;
     }
 
@@ -63,9 +63,8 @@ public class Estacionamento {
         this.totalFaturamentoUtilitario = totalFaturamentoUtilitario;
     }
 
-    public void setValorHora(Long valorHora) {
+    public void setValorHora(Double valorHora) {
         this.valorHora = valorHora;
     }
-
 
 }

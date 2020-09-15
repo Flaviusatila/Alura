@@ -15,10 +15,6 @@ public class EstacionamentoServiceImp implements EstacionamentoService {
     EstacionamentoRepository estacionamentoRepository;
 
 
-    @Override
-    public Estacionamento findById(long id) {
-        return estacionamentoRepository.findById(id).get();
-    }
 
     @Override
     public List<Estacionamento> findAll() {
@@ -29,6 +25,12 @@ public class EstacionamentoServiceImp implements EstacionamentoService {
     public Estacionamento save(Estacionamento estacionamento) {
         return estacionamentoRepository.save(estacionamento);
     }
+
+//    @Override
+//    public Long referencia(Long id) {
+//        Long Idref = id;
+//        return Idref;
+//    }
 
 //    @Override
 //    public Estacionamento save(Estacionamento estacionamento) {

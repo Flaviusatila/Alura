@@ -11,18 +11,27 @@ public class Movimentacao {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    @NotNull
+
     private Long id_veiculo;
 
-    @NotNull
+
     private Long id_estacionamento;
 
-    @NotNull
+
     private Long id_tipo_veiculo;
 
-    @NotNull
-    private Long total_valor_estacionado_movimentado;
 
+    private Double total_valor_estacionado_movimentado;
+
+    private Double hrEstacionamentoCobrado;
+
+    public Double getHrEstacionamentoCobrado() {
+        return hrEstacionamentoCobrado;
+    }
+
+    public void setHrEstacionamentoCobrado(Double hrEstacionamentoCobrado) {
+        this.hrEstacionamentoCobrado = hrEstacionamentoCobrado;
+    }
 
     public Long getId_veiculo() {
         return id_veiculo;
@@ -48,11 +57,11 @@ public class Movimentacao {
         this.id_tipo_veiculo = id_tipo_veiculo;
     }
 
-    public Long getTotal_valor_estacionado_movimentado() {
+    public Double getTotal_valor_estacionado_movimentado() {
         return total_valor_estacionado_movimentado;
     }
 
-    public void setTotal_valor_estacionado_movimentado(Long total_valor_estacionado_movimentado) {
+    public void setTotal_valor_estacionado_movimentado(Double total_valor_estacionado_movimentado) {
         this.total_valor_estacionado_movimentado = total_valor_estacionado_movimentado;
     }
 

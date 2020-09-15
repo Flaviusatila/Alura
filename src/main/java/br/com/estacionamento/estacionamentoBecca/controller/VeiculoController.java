@@ -33,7 +33,7 @@ public class VeiculoController {
             ModelAndView mv = new ModelAndView("veiculos");
             List<Veiculo> veiculos = veiculosService.findAll();
             mv.addObject("veiculos",veiculos);
-            mv.addObject( "marcaveiculo", MarcaVeiculo.values() );
+//            mv.addObject( "marcaveiculo", MarcaVeiculo.values() );
 //            mv.addObject( veiculos );
             return mv;
         }

@@ -49,7 +49,7 @@ public class DammyData {
 
         for (Veiculo veiculo : veiculosList) {
             Veiculo veiculoSave = veiculoRepository.save(veiculo);
-            movimentacaoService.saidaVeiculo( veiculoSave );
+//            movimentacaoService.saidaVeiculo( veiculoSave );
             System.out.println(veiculoSave.getPlaca());
         }
     }
