@@ -1,13 +1,23 @@
 package br.com.estacionamento.estacionamentoBecca.dto;
 
+
 import br.com.estacionamento.estacionamentoBecca.enums.MarcaVeiculo;
 
 import java.time.LocalDateTime;
 
 public class VeiculoDTO {
 
-    private String placa;
-    private String marca;
+    private java.lang.String placa;
+    private String marcaveiculo;
+
+    public String getMarcaveiculo() {
+        return marcaveiculo;
+    }
+
+    public void setMarcaveiculo(String marcaveiculo) {
+        this.marcaveiculo = marcaveiculo;
+    }
+
     private String modelo;
     private long  oid_tipo_veiculo;
     private double fatorEstacionamento;
@@ -37,11 +47,11 @@ public class VeiculoDTO {
         this.oid_tipo_veiculo = oid_tipo_veiculo;
     }
 
-    public String getPlaca() {
+    public java.lang.String getPlaca() {
         return placa;
     }
 
-    public void setPlaca(String placa) {
+    public void setPlaca(java.lang.String placa) {
         this.placa = placa;
     }
 
@@ -50,13 +60,6 @@ public class VeiculoDTO {
 //        return marca;
 //    }
 
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
 
     public String getModelo() {
         return modelo;

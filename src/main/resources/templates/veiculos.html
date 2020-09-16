@@ -4,7 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Veiculos</title>
     <link rel="stylesheet" type="text/css" media="all"
-          href="../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+          href="../css/bootstrap.min.css"/>
+<!--          th:href="@{/css/bootstrap.min.css}" />-->
     <link rel="stylesheet" type="text/css" media="all"
           href="../css/style.css" th:href="@{/css/style.css}" />
     <link rel="stylesheet" type="text/css" media="all"
@@ -13,15 +14,12 @@
 <body>
 <header class="caixaGeral">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Estacionamento</a>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="form-inline my-2 my-lg-0 " method="get">
+        <a class="navbar-brand col-lg-8" href="/">Estacionamento</a>
+            <form class="form-inline my-2 my-lg-0 col-lg-4" method="get">
                 <input class="form-control mr-sm-2" type="search" placeholder="Placa do Carro" aria-label="Search" name="placa">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Procurar</button>
 
             </form>
-        </div>
     </nav>
 </header>
 <div class="container caixaGeral">
@@ -35,7 +33,8 @@
                 <th>Placa</th>
                 <th>Modelo</th>
                 <th>Marca</th>
-<!--                <th>Hora Entrada</th>-->
+                <th>Hora Entrada</th>
+                <th>Hora Saida</th>
             </tr>
             </thead>
             <tbody>
@@ -47,8 +46,10 @@
 <!--                <td><a th:href="/veiculos/${veiculo.id}">Link</a></td>-->
                     <td><span th:text="${veiculo.placa}"></span></td>
                     <td><span th:text="${veiculo.modelo}"></span></td>
-                    <td><span th:text="${veiculo.marca}"></span></td>
-<!--                    <td><span th:text="${#dates.format(veiculo.horaEntrada, 'dd-MM-yyyy HH:mm') }"></span></td>-->
+                    <td><span th:text="${veiculo.marcaveiculo}"></span></td>
+                    <td><span th:text="${#temporals.format(veiculo.horaEntrada, 'HH:mm')}"></span></td>
+                    <td><span th:text="${veiculo.horaSaida}? ${#temporals.format(veiculo.horaSaida, 'HH:mm')}
+                    : 'Estacionado'"></span></td>
             </tr>
 <!--            <tr>Ta aparecendo ?</tr>-->
             </tbody>
@@ -68,13 +69,21 @@
                                                      class="form-control" id="modelo" name="modelo" placeholder="Modelo Carro" />
         </div>
         <div class="form-group col-lg-4">
-            <label for="marca">Marca</label> <input
-                type="text" class="form-control" id="marca" name="marca" placeholder="Marca do Carro" />
+            <label for="marcaveiculo">Marca</label> <input
+                type="text" class="form-control" id="marcaveiculo" name="marcaveiculo" placeholder="Marca do Carro" />
 <!--            <label th:for="marca">Marca Veiculo</label><br>-->
 <!--            <select class="dropboxStyle" name="marca" th:field="*{marca}" id="marca">-->
 <!--                <option  th:each="marcaveiculo : ${marcaveiculo}"-->
 <!--                         th:value="${macarveiculo}"-->
 <!--                         th:text="${marcaveiculo.name}" selected="selected"></option>-->
+<!--            </select>-->
+<!--            <label th:for="marcaveiculo">Marca Carro</label>-->
+<!--            <select name = "marcaveiculo">-->
+<!--                <option value=""></option>-->
+<!--                <option th:each="marcaveiculo : ${T(src.main.java.br.com.estacionamento.estacionamentoBecca.enums.MarcaVeiculo).values()}"-->
+<!--                        th:value="${marcaveiculo}" th:text="${marcaveiculo}"-->
+<!--                        selected="selected">-->
+<!--                </option>-->
 <!--            </select>-->
         </div>
 

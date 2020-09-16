@@ -15,7 +15,7 @@ public class Veiculo {
     @NotNull
     private Long   id;
     private String placa;
-    private String marca;
+    private String marcaveiculo;
     private String modelo;
     private Double fatorEstacionamento;
     @NotNull
@@ -45,28 +45,28 @@ public class Veiculo {
         this.id = id;
     }
 
-    public String getPlaca() {
+    public java.lang.String getPlaca() {
         return placa;
     }
 
-    public void setPlaca(String placa) {
+    public void setPlaca(java.lang.String placa) {
         this.placa = placa;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getMarcaveiculo() {
+        return marcaveiculo;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setMarcaveiculo(String marcaveiculo) {
+        this.marcaveiculo = marcaveiculo;
     }
 
     public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public void setModelo(String marcaveiculo) {
+        this.modelo = marcaveiculo;
     }
 
     public Double getFatorEstacionamento() {

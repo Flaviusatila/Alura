@@ -61,22 +61,22 @@ public class MovimentacaoServiceImp implements MovimentacaoService, CalculosServ
     public Double totalFaturamento(Veiculo veiculo, Movimentacao movimentacao) {
         int horaDuration = veiculo.getHoraSaida().getHour() - veiculo.getHoraEntrada().getHour();
         int minutoDuration = veiculo.getHoraSaida().getMinute();
+        double acrescimo = 1;
         Double valorTotalEstacionado = 0.0;
+        if (veiculo.getOid_tipo_veiculo(  ) == 2)
+                acrescimo = 0.85;
         if (horaDuration > 0) {
             valorTotalEstacionado = Double.valueOf( horaDuration * movimentacao.getHrEstacionamentoCobrado( ) );
             if (minutoDuration >= 30)
                 valorTotalEstacionado += Double.valueOf( movimentacao.getHrEstacionamentoCobrado( ) );
             if (veiculo.getFatorEstacionamento() != 0)
-                valorTotalEstacionado = valorTotalEstacionado * 1.15;
+                valorTotalEstacionado = valorTotalEstacionado * (acrescimo + 0.15);
 
         }else  if (minutoDuration >= 30){
             valorTotalEstacionado = Double.valueOf( movimentacao.getHrEstacionamentoCobrado( ) );
             if (veiculo.getFatorEstacionamento() != 0)
-                valorTotalEstacionado = valorTotalEstacionado * 1.15;
+                valorTotalEstacionado = valorTotalEstacionado * (acrescimo + 0.15);
         }
-        System.out.println(horaDuration);
-        System.out.println(minutoDuration);
-        System.out.println("Estou sendo executado " + valorTotalEstacionado);
         return valorTotalEstacionado;
     }
 }

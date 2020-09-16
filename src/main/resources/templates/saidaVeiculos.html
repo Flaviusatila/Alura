@@ -35,12 +35,11 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Marca</label>
-                <p><p><span th:text="${veiculo.marca}"></span></p></p>
+                <p><span th:text="${veiculo.marcaveiculo}"></span></p>
             </div>
             <div class="form-group col-md-6">
                 <label>Hora Entrada</label>
-<!--                <span th:text="${veiculo.horaEntrada}"></span>-->
-<!--                <p th:text="${#temporals.format(veiculo.horaEntrada, 'dd MMM yyyy')}"></p>-->
+                <p th:text="${#temporals.format(veiculo.horaEntrada, 'HH:mm')}"></p>
             </div>
 
             <form method="post" class="form-row">
